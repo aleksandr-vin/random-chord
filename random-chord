@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+
+notes="A B C D E F G"
+
+random_chord() {
+    for note in ${notes}
+    do
+	for adj in "#" "" "b"
+	do
+	    for tpe in "m" "" "maj"
+	    do
+		for ext in "7"
+		do
+		    echo "${note}${adj}${tpe}${ext}"
+		done
+	    done
+	done
+    done | sort --random-sort | head -1
+}
+
+random_chord
